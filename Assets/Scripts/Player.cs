@@ -24,10 +24,18 @@ public class Player : MonoBehaviour
         _y = Input.GetAxisRaw("Vertical");
 
         // Reset MoveDelta
-        _moveDelta = new Vector3(_x, _y, 0);
+        _moveDelta = new Vector2(_x, _y);
+        if (_moveDelta.x != 0f || _moveDelta.y != 0)
+        {
+            Move(_moveDelta);
+        }
+    }
 
+    private void Move(Vector2 moveDelta)
+    {
         // Swipe the sprite direction, when you are going right or left
         // Horizontal move Controls
+        _moveDelta = moveDelta;
         if (_moveDelta.x > 0)
         {
             var hit = Physics2D.BoxCast(transform.position, _boxCollider2D.size, 0, new Vector2(_moveDelta.x, 0),
