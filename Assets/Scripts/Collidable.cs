@@ -26,8 +26,14 @@ public class Collidable : MonoBehaviour
                     continue;
                 }
 
-                Debug.Log(hits[i].name);
+                OnCollide(hits[i]);
+                hits[i] = null;
             }
         }
+    }
+
+    protected virtual void OnCollide(Collider2D coll)
+    {
+        Debug.Log(coll.name);
     }
 }
