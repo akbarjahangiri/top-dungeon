@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects.GameEvents;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     private float _x;
     private float _y;
 
+    public GameEvent hitEnemy;
     private void Start()
     {
         _boxCollider2D = GetComponent<BoxCollider2D>();
@@ -29,10 +31,12 @@ public class Player : MonoBehaviour
         {
             Move(_moveDelta);
         }
+        
     }
-
+    
     private void Move(Vector2 moveDelta)
     {
+        PlayerDeath();
         // Swipe the sprite direction, when you are going right or left
         // Horizontal move Controls
         _moveDelta = moveDelta;
@@ -77,5 +81,12 @@ public class Player : MonoBehaviour
                 transform.Translate(_moveDelta * Time.deltaTime);
             }
         }
+    }
+
+    public void PlayerDeath()
+    {
+        hitEnemy.Raise();
+        Debug.Log("these nuts!");
+        gameObject.SetActive(false);
     }
 }
