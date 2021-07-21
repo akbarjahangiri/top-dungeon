@@ -121,39 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &76432636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4847297977895296189, guid: b3c880506006066499c76cb547784591,
-    type: 3}
-  m_PrefabInstance: {fileID: 4847297978323875322}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &76432637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76432636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff548693950c1204baa2861ff9d797aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameEvent: {fileID: 0}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1136213817
 GameObject:
   m_ObjectHideFlags: 0
@@ -10723,7 +10690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2b2da0ce2b8bf49a2817be058ae6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEnemy: {fileID: 0}
 --- !u!212 &1647395375
 SpriteRenderer:
   m_ObjectHideFlags: 0

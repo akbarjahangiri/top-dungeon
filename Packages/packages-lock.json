@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.amirardroudi.birdtools": {
+      "version": "https://github.com/AmirArdroudi/birdtools.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9b270651ed0b08849e91b34bfb7a54f85b4c0934"
+    },
     "com.unity.2d.animation": {
       "version": "3.2.6",
       "depth": 0,

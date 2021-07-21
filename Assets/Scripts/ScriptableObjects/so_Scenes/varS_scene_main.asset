@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d28d3928227f35b459bb183cf21fe5ee, type: 3}
-  m_Name: hit_enemys
+  m_Script: {fileID: 11500000, guid: 2a83141e995a44988d97e09baf4bd9e8, type: 3}
+  m_Name: varS_scene_main
   m_EditorClassIdentifier: 
+  Value: 
