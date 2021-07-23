@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using BirdTools;
 using UnityEngine;
 
 public class Chest : Collectable
 {
     [SerializeField] private Sprite emptyChest;
-    [SerializeField] private int pesosAmount = 5;
+    [SerializeField] private int goldAmount = 5;
+    public IntVariable gold;
 
     private void OnEnable()
     {
@@ -19,7 +21,8 @@ public class Chest : Collectable
         {
             base.OnCollect();
             GetComponent<SpriteRenderer>().sprite = emptyChest;
-            Debug.Log("grant: " + pesosAmount);
+            gold.Value += goldAmount;
+            Debug.Log("grant: " + goldAmount);
         }
     }
 

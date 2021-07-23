@@ -9,6 +9,7 @@ using Random = UnityEngine.Random;
 public class Gate : Collidable
 {
     public List<StringVariable> sceneList = new List<StringVariable>();
+
     protected override void OnCollide(Collider2D coll)
     {
         if (coll.CompareTag("Player"))
@@ -19,6 +20,8 @@ public class Gate : Collidable
 
     private void LoadDungeon()
     {
+        // Save sate of game before loading next scene
+        GameManager.instance.SaveState();
         String randomScene = sceneList[Random.Range(0, sceneList.Count)].Value;
         SceneManager.LoadScene(randomScene);
     }
