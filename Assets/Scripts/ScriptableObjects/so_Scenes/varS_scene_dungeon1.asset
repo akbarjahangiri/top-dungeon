@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a83141e995a44988d97e09baf4bd9e8, type: 3}
   m_Name: varS_scene_dungeon1
   m_EditorClassIdentifier: 
-  Value: 
+  Value: Dungeon1

@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += LoadState;
         instance = this;
     }
-    
+
     // Resources
     public List<Sprite> playerSprites;
     public List<Sprite> weaponSprites;
@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     // References
     public Player player;
+
+    public FloatingTextManager floatingTextManager;
     // public Weapon weapon
 
     // Logic
@@ -62,13 +64,17 @@ public class GameManager : MonoBehaviour
     public void LoadState(Scene scene, LoadSceneMode mode)
     {
         if (!PlayerPrefs.HasKey("SaveGame"))
-        {
             return;
-        }
-
         string savedData = PlayerPrefs.GetString("SaveGame");
         string[] data = savedData.Split('|');
         gold.Value = Int32.Parse(data[1]);
         experience.Value = Int32.Parse(data[2]);
+
+        Debug.Log("scene loaded: " + SceneManager.GetActiveScene().name);
+    }
+
+    public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
+    {
+        floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using BirdTools;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class Chest : Collectable
 {
@@ -12,7 +14,6 @@ public class Chest : Collectable
 
     private void OnEnable()
     {
-        
     }
 
     protected override void OnCollect()
@@ -22,7 +23,8 @@ public class Chest : Collectable
             base.OnCollect();
             GetComponent<SpriteRenderer>().sprite = emptyChest;
             gold.Value += goldAmount;
-            Debug.Log("grant: " + goldAmount);
+            GameManager.instance.ShowText("+" + goldAmount + "gold!", 30, Color.yellow, transform.position,
+                Vector3.up * 100, 2f);
         }
     }
 
